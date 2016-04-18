@@ -1,0 +1,24 @@
+{
+  "name": "asynquence-test",
+  "version": "1.0.0",
+  "description": "Playing around with Kyle Simpson's callback hell killer nirvana library",
+  "main": "asynquence.js",
+  "scripts": {
+    "test": "node asynquence.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzaffi/asynquence-test.git"
+  },
+  "keywords": [
+    "Promise",
+    "generator",
+    "asynquence"
+  ],
+  "author": "Zeph Grunschlag",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tzaffi/asynquence-test/issues"
+  },
+  "homepage": "https://github.com/tzaffi/asynquence-test#readme"
+}
