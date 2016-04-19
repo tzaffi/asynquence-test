@@ -8,7 +8,7 @@ This is basically most of the code in Appendix A of Kyle Simposon's [Async & Per
 Me just playing around trying to figure out what it all means
 
 ## `callback.js`
-Standard callback approch
+Standard callback approach
 
 ### TODO:
 translate `callback.js` into **ASQ**!!!
