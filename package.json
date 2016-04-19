@@ -4,7 +4,7 @@
   "description": "Playing around with Kyle Simpson's callback hell killer nirvana library",
   "main": "asynquence.js",
   "scripts": {
-    "test": "node asynquence.js"
+    "test": "node ASQ.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/tzaffi/asynquence-test/issues"
   },
-  "homepage": "https://github.com/tzaffi/asynquence-test#readme"
+  "homepage": "https://github.com/tzaffi/asynquence-test#readme",
+  "dependencies": {
+    "asynquence": "^0.9.0",
+    "asynquence-contrib": "^0.26.0"
+  }
 }
