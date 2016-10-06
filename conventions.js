@@ -56,6 +56,29 @@ var doublerAndTriplerr = function(done, params){
 
 var ASQ = require('asynquence-contrib');
 
+var topFailureBoilerplate = function(done, params, expectedVals){
+  expectedVals.forEach(val => {
+    if(!params.val){
+      var msg = `${val} is missing from params`;
+      if(done){
+        done.fail(msg);
+      } else {
+        throw msg;
+      }
+    } 
+  });
+}
+
+// call with `return bottomBoilerplate(done, params);`
+var bottomBoilerplate = function(done, params){
+  if(done){
+    done(params);
+  } else {
+    return params;
+  }
+}
+
+
 // Expected params: val
 // Output params: valx2, valx3
 var doublerAndTripler = function(done, params){
@@ -81,8 +104,24 @@ var doublerAndTripler = function(done, params){
   }
 }
 
+// Expected params: val, valx2, valx3
+// Output params: valP13, valx2P13, valx3P13
+var thirteenAdder = function(done, params){
+  var expectedVals = [ "val", "valx2", "valx3" ];
+
+  if(!params) params = {}; // this one is unavoidable without some crazy JS hoops
+  topFailureBoilerplate(done, params, expectedVals);
+
+  params.valP13 = params.val + 13;
+  params.valx2P13 = params.valx2 + 13;
+  params.valx3P13 = params.valx3 + 13;
+  
+  return bottomBoilerplate(done, params);
+}
+
 ASQ(
   { val: 7 },
   doublerAndTripler,
+  thirteenAdder,
   (done, params) => console.log(params)
 );
